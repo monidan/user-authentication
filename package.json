@@ -5,22 +5,29 @@
   "main": "index.js",
   "scripts": {
     "start:frontend": "vite",
+    "start:backend": "nodemon ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@firebase/app-types": "0",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vuelidate/core": "^2.0.0",
     "@vuelidate/validators": "^2.0.0",
     "autoprefixer": "^10.4.13",
+    "bcrypt": "^5.1.0",
+    "firebase-admin": "^11.4.1",
+    "nodemon": "^2.0.20",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.1",
     "vite": "^3.2.1",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
   },
   "dependencies": {
+    "fastify": "^4.9.2",
     "vue": "^3.2.41"
   }
 }
