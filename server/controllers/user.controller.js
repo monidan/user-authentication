@@ -13,7 +13,7 @@ class UserController {
      * @param {import('fastify/types/utils').ReplyDefault} reply 
      */
     async signUp(request, reply) {
-        const body = request.body === JSON.stringify(request.body)
+        const body = typeof request.body === 'string'
             ? JSON.parse(request.body)
             : request.body;
 
@@ -46,8 +46,43 @@ class UserController {
         reply.code(200).send({ data: 'hello' });
     }
 
-    logIn() {
+    async logIn(request, reply) {
+        const body = typeof request.body === 'string'
+            ? JSON.parse(request.body)
+            : request.body;
 
+        const {
+            email,
+            password
+        } = body;
+
+        try {
+            const userCollection = await this._db.collection('users').where('email', '==', email).get();
+            
+            if (!userCollection.docs.length) throw Error('This user does not exist!');
+
+            const user = userCollection.docs[0].data();
+            const cleanUser = {
+                name: user.name,
+                surname: user.surname,
+                email: user.email,
+            };
+
+            const result = await this.comparePasswords(password, user);
+            
+            if (result) reply.code(200).send({ authToken: '123123', userData: cleanUser });
+            else reply.code(400).send({ msg: 'Wrong password!' });
+        } catch (err) {
+            reply.code(400).send({ msg: err.message });
+        }
+    }
+
+    async comparePasswords(password, user) {
+        try {
+            const { hashedPassword } = await cryptonizer.encryptPasswordByHash(password, user.hash);
+            
+            return hashedPassword === user.password;
+        } catch (err) {}
     }
 
     /**

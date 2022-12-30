@@ -15,3 +15,15 @@ exports.encryptPassword = async function (password) {
         console.error(err)
     }
 }
+
+exports.encryptPasswordByHash = async function (password, hash) {
+    try {
+        const hashedPassword = await bcrypt.hash(password, hash);
+
+        return {
+            hashedPassword,
+        }
+    } catch (err) {
+        console.error(err);
+    }
+}
