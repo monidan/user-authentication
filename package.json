@@ -1,5 +1,5 @@
 {
-  "name": "auth",
+  "name": "authenticator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,17 @@
     "start:backend": "nodemon ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "auth",
+    "nodejs",
+    "fastify",
+    "vue",
+    "vuejs",
+    "tailwindcss",
+    "tailwind",
+    "firebase",
+    "vite"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
