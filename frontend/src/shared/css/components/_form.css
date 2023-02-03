@@ -1,0 +1,7 @@
+.form-input + span {
+    @apply transition-all duration-300;
+} 
+
+.form-input:focus + span {
+    @apply opacity-0;
+}

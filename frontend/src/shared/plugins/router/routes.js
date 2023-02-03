@@ -12,5 +12,10 @@ export default [
     {
         path: '/sign-up',
         component: () => import('/views/SignUp.vue')
+    },
+    {
+        path: '/profile',
+        name: 'UserProfile',
+        component: () => import('/views/UserProfile.vue')
     }
 ]

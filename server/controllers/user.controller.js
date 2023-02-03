@@ -47,14 +47,13 @@ class UserController {
     }
 
     async logIn(request, reply) {
-        const body = typeof request.body === 'string'
-            ? JSON.parse(request.body)
-            : request.body;
-
-        const {
+        const { authorization } = request.headers;
+        const [
             email,
             password
-        } = body;
+        ] = Buffer.from(authorization.split('Basic ')[1], 'base64')
+                .toString('ascii')
+                .split(':');
 
         try {
             const userCollection = await this._db.collection('users').where('email', '==', email).get();
