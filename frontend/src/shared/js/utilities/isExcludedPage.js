@@ -1,0 +1,1 @@
+export const isExcludedPage = (route, ...pages) => pages.every(page => route.name !== page);

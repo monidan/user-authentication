@@ -1,0 +1,60 @@
+.bg-bubble {
+    width: 200px;
+
+    aspect-ratio: 1/1
+}
+
+.bg-bubble::before {
+    content: '';
+    display: block;
+
+    opacity: 0.6;
+    
+    width: 100%;
+    height: 100%;
+    
+    border: 1px solid white;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.25),
+        inset -10px 10px 15px 5px rgba(255, 255, 255, 0.35),
+        inset 4px -4px 25px 2px rgba(0, 0, 0, 0.25);
+    
+    background: radial-gradient(80% 80% at 70% 40%, 
+        rgba(72, 255, 56, 0.3) 0%, 
+        rgba(82, 0, 255, 0.3) 56.77%, 
+        rgba(81, 224, 255, 0.75) 96.88%);
+}
+
+.bg-bubble--big {
+    @apply w-[400px] xl:w-[900px] h-auto;
+    animation: 2s floating 1s infinite alternate linear;
+}
+.bg-bubble--medium {
+    @apply w-[300px] xl:w-[600px] h-auto;
+    animation: 3s floating 1s infinite alternate linear;
+    animation-delay: 0.5s;
+}
+.bg-bubble--small {
+    @apply xl:w-[400px] h-auto;
+    animation: 3s floating 1s infinite alternate linear;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0) rotate(-10deg);
+    }
+
+    30% {
+        transform: translate(5px, 3px) rotate(0);
+    }
+
+    70% {
+        transform: translate(7px, -5px) rotate(-20deg);
+    }
+
+    100% {
+        transform: translate(-2px, 6px) rotate(-40deg);
+    }
+}

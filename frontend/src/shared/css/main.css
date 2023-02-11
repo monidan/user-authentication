@@ -1,7 +1,10 @@
 @import "tailwindcss/base";
+@import "./base/_typography.css";
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 @import "./components/_form.css";
+@import "./components/_bg-bubbles.css";
 
 

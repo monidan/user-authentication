@@ -1,0 +1,9 @@
+@layer base {
+    @font-face {
+        font-family: 'Mina';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/shared/assets/fonts/Mina-Regular.ttf') format('truetype');
+    }
+}
