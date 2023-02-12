@@ -24,9 +24,9 @@
                     </div>
         
                     <div class="pt-6">
-                        <button class="w-full py-2 border border-white rounded-lg hover:bg-white/[0.15] hover:border-white hover:text-white transition-all duration-300 text-sm">
-                            Change password
-                        </button>
+                        <primary-button>
+                            Change Password
+                        </primary-button>
                     </div>
                 </div>
             </Panel>
@@ -40,12 +40,14 @@
 <script>
 import Panel from '/components/Panel.vue';
 import BaseInput from '/components/Base/bInput.vue';
+import PrimaryButton from '/components/Base/PrimaryButton.vue';
 
 export default {
     name: 'UserProfile',
     components: {
         Panel,
         BaseInput,
+        PrimaryButton,
     },
     data() {
         return {

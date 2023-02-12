@@ -6,11 +6,11 @@
             </h1>
 
             <div class="flex gap-x-2 min-w-full">
-                <router-link to="/log-in" class="text-2xl font-light hover:bg-white/20 hover:border-white/20 transition-all duration-300 text-center border flex-grow rounded py-2 border-green-600 uppercase text-white">
+                <router-link to="/log-in" class="text-xl font-light hover:bg-white/20 hover:border-white/20 transition-all duration-300 text-center border flex-grow rounded py-2 border-green-600 text-white">
                     Log in
                 </router-link>
 
-                <router-link to="/sign-up" class="text-2xl font-light hover:bg-green-600/50 hover:text-gray-200 transition-all duration-300 text-center border flex-grow rounded py-2 uppercase border-green-600 bg-green-600/30 text-white">
+                <router-link to="/sign-up" class="text-xl font-light hover:bg-green-600/50 hover:text-gray-200 transition-all duration-300 text-center border flex-grow rounded py-2 border-green-600 bg-green-600/30 text-white">
                     Sign up
                 </router-link>
             </div>

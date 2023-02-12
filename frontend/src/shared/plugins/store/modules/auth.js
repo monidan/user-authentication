@@ -3,7 +3,7 @@ import { setDataInLocalStorage } from "/shared/js/utilities/localStorage";
 const auth = {
     state: () => ({
         user: {},
-        authToken: '',
+        authToken: '123',
     }),
     mutations: {
         setUserData(state, data) {

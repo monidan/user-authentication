@@ -43,7 +43,7 @@ class UserController {
                 hash,
             })
 
-        reply.code(200).send({ data: 'hello' });
+        reply.code(200).send({ data: { user: { name, surname, email } } });
     }
 
     async logIn(request, reply) {

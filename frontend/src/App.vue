@@ -1,6 +1,6 @@
 <template>
     <section class="h-screen">
-        <BackgroundBubbles />
+        <BackgroundBubbles class="overflow-hidden" />
 
         <main class="z-10">
             <router-view></router-view>

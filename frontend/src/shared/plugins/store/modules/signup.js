@@ -10,9 +10,7 @@ const signUp = {
                 password,
             } = userData;
 
-            console.log(userData)
-
-            fetch(`${BASE_ENDPOINT_URL}/sign-up`, {
+            return fetch(`${BASE_ENDPOINT_URL}/sign-up`, {
                 method: 'POST',
                 body: JSON.stringify({
                     name,
@@ -21,8 +19,6 @@ const signUp = {
                     password
                 })
             })
-            .then((data) => data.json())
-            .then(data => console.log(data))
         }        
     }
 }
